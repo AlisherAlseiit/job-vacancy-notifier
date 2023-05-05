@@ -9,6 +9,7 @@ from sqlalchemy.orm import Session
 from .config import settings
 from . import database, models, schemas
 
+
 app = FastAPI()
 
 origins = ["*"]
@@ -27,7 +28,7 @@ def notify(db: Session = Depends(database.get_db)):
     # URL of the website to scrape
     url = 'https://agropraktika.eu/vacancies?l=united-kingdom'
  
-    # Make a GET request to the website and parse the HTML using Beautiful Soup
+    # Make a GET to the website and parse the HTML using Beautiful Soup
     html_text = requests.get(url).text
     soup = BeautifulSoup(html_text, 'lxml')
 
@@ -67,8 +68,7 @@ def notify(db: Session = Depends(database.get_db)):
         
     return {"message": "Website scraped successfully!"}
 
-
-    
+ 
 @app.get("/")
 def root():
     return {"message": "HEllO WORLD CI/CD here"}
