@@ -59,7 +59,7 @@ def notify(db: Session = Depends(database.get_db)):
             message=f"Быстрее подай заявку \n название вакансии: {new_vacancy.name} \n начинается: {new_vacancy.start}",
             title=f"Новая Вакансия!!!",
             url=f"{new_vacancy.link}",
-            url_title="View Job"
+            url_title=">>> Нажми сюда для перехода на сайт <<<"
             )
 
     return {"message": "Website scraped successfully!"}
