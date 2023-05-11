@@ -30,12 +30,12 @@ multidict==6.0.4
 orjson==3.8.11
 pg8000==1.29.4
 psycopg2==2.9.6
-pushover==0.5
 pydantic==1.10.7
 PyJWT==2.6.0
 python-dateutil==2.8.2
 python-dotenv==1.0.0
 python-multipart==0.0.6
+python-pushover==0.4
 pytz==2023.3
 PyYAML==6.0
 requests==2.29.0
