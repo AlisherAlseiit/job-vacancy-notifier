@@ -4,7 +4,6 @@ import time
 from fastapi import FastAPI, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
-# from pushover import Client
 import http.client, urllib
 
 from .config import settings
@@ -71,6 +70,7 @@ def notify(db: Session = Depends(database.get_db)):
             "token": f"{settings.api_token}",
             "user": f"{settings.user_key}",
             "message": f"Быстрее подай заявку \n название вакансии: {new_vacancy.name} \n начинается: {new_vacancy.start} \n ({new_vacancy.link})",
+            "sound": "my-custom",
             }), { "Content-type": "application/x-www-form-urlencoded" })
             conn.getresponse()
 
