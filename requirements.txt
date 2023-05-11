@@ -30,6 +30,7 @@ multidict==6.0.4
 orjson==3.8.11
 pg8000==1.29.4
 psycopg2==2.9.6
+pushover==0.5
 pydantic==1.10.7
 PyJWT==2.6.0
 python-dateutil==2.8.2
