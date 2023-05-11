@@ -1,10 +1,8 @@
 from pydantic import BaseSettings
 
 class TwilioSettings(BaseSettings):
-    account_sid: str
-    auth_token: str
-    to_phone_number: str
-    from_phone_number: str
+    user_key: str
+    api_token: str
     
     database_hostname: str
     database_port: str
