@@ -4,7 +4,7 @@ import time
 from fastapi import FastAPI, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
-from pushover import Client
+# from pushover import Client
 
 from .config import settings
 from . import database, models, schemas
@@ -54,13 +54,13 @@ def notify(db: Session = Depends(database.get_db)):
 
 
             #  using pushover to send notification
-            client = Client(f"{settings.user_key}", api_token=f"{settings.api_token}")
-            client.send_message(
-            message=f"Быстрее подай заявку \n название вакансии: {new_vacancy.name} \n начинается: {new_vacancy.start}",
-            title=f"Новая Вакансия!!!",
-            url=f"{new_vacancy.link}",
-            url_title=">>> Нажми сюда для перехода на сайт <<<"
-            )
+            # client = Client(f"{settings.user_key}", api_token=f"{settings.api_token}")
+            # client.send_message(
+            # message=f"Быстрее подай заявку \n название вакансии: {new_vacancy.name} \n начинается: {new_vacancy.start}",
+            # title=f"Новая Вакансия!!!",
+            # url=f"{new_vacancy.link}",
+            # url_title=">>> Нажми сюда для перехода на сайт <<<"
+            # )
 
     return {"message": "Website scraped successfully!"}
 
