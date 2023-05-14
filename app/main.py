@@ -12,6 +12,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.options import Options
 
 
 from .config import settings
@@ -63,7 +64,9 @@ def apply_for_job(db: Session = Depends(database.get_db)):
 
             # Automated apply for job
             # Create a new instance of the Chrome driver
-            driver = webdriver.Chrome(ChromeDriverManager().install())
+            options = Options()
+            options.binary_location = '/app/.apt/usr/bin/google-chrome-stable'
+            driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), chrome_options=options)
 
             # Navigate to the Agropraktika website
             driver.get("https://agropraktika.eu/")
